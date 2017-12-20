@@ -1,0 +1,17 @@
+
+message IpcMessage {
+    required Header header = 1;
+    optional bytes body = 2;
+}
+
+message Header {
+	required int32 size = 1;
+	repeated Id receiver = 2;
+	repeated Id sender = 3;
+	required uint32 magic = 4;
+}
+
+message Id {
+	required uint32 type = 1;
+	required uint32 id = 2;
+}
